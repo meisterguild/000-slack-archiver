@@ -19,12 +19,19 @@
 
 `.env.sample`をコピーして`.env`を作成します。`TOKEN`を記載します。
 
+以下を実行します。
+
+```
+docker compose build
+docker compose run --rm app npm install
+```
+
 # 1. チャンネルリストの取得
 
 以下を実行します。
 
 ```
-docker compose run --rm app node channellist.js
+docker compose run --rm app node src/channellist.js
 ```
 
 `channellist.jsonc`が出力されます。
@@ -36,13 +43,13 @@ docker compose run --rm app node channellist.js
 `channellist.jsonc`が出力された状態で以下
 
 ```
-docker compose run --rm app node channellist.js
+docker compose run --rm app node src/channellist.js
 ```
 
 または
 
 ```
-docker compose run --rm app node channellist.js <JSONCファイルパス>
+docker compose run --rm app node src/channellist.js <JSONCファイルパス>
 ```
 
 を実行します。
