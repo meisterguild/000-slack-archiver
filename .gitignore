@@ -1,0 +1,5 @@
+.env
+node_modules
+channellist.jsonc
+archives
+archives.zip
