@@ -45,13 +45,13 @@ docker compose run --rm app node src/channellist.js
 `channellist.jsonc`が出力された状態で以下
 
 ```
-docker compose run --rm app node src/channellist.js
+docker compose run --rm app node src/archive.js
 ```
 
 または
 
 ```
-docker compose run --rm app node src/channellist.js <JSONCファイルパス>
+docker compose run --rm app node src/archive.js <JSONCファイルパス>
 ```
 
 を実行します。
