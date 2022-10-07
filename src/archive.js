@@ -113,7 +113,7 @@ async function archiveChannel(channelID, channelName, initCount, initCursor) {
       };
     });
 
-    Promise.all(promises).then((result) => {
+    await Promise.all(promises).then((result) => {
       const messages = result.map((r) => r.message);
       const cursor = result[0].next_cursor;
       const count = result[0].count;
