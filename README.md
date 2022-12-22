@@ -1,4 +1,4 @@
-slackチャンネルの使い方によっては生成されるバックアップのファイルサイズが膨大なものになったりするかもしれません。ツールの実行は自己責任でお願いします。
+slack チャンネルの使い方によっては生成されるバックアップのファイルサイズが膨大なものになったりするかもしれません。ツールの実行は自己責任でお願いします。
 
 # 必要なもの
 
@@ -57,3 +57,23 @@ docker compose run --rm app node src/archive.js <JSONCファイルパス>
 を実行します。
 
 10000 件の投稿があるチャンネルで約 15 分かかり、約 1GB のファイルが作成されます。
+
+# 3. チャンネルに所属するメンバーを取得
+
+メンバーの取得は`channellist.jsonc`に記載されたチャンネルを対象に行います。かつメンバー ID と名前の紐づけは`slack-meisterguild-members_filtered.csv`を参照します。
+
+`channellist.jsonc`および`slack-meisterguild-members_filtered.csv`がある状態で以下
+
+```
+docker compose run --rm app node src/channelMember.js
+```
+
+または
+
+```
+docker compose run --rm app node src/channelMember.js <JSONCファイルパス> <CSVファイルパス>
+```
+
+を実行します。
+
+`channelMember.json`に出力されます。

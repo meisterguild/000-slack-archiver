@@ -14,7 +14,11 @@ const client = new WebClient(TOKEN);
       types: "public_channel,private_channel",
     });
 
-    const iDList = list.channels?.map((channel) => [channel.id, channel.name]);
+    const iDList = list.channels?.map((channel) => [
+      channel.id,
+      channel.name,
+      channel.is_private,
+    ]);
 
     Array.prototype.push.apply(channelIDList, iDList);
 
